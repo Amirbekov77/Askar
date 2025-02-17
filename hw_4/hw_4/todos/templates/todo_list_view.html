@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Todo Lists</h1>
+<ul>
+    {% for todo_list in todo_lists %}
+    <li>
+        <a href="{% url 'todo_list_detail' todo_list.id %}">{{ todo_list.title }}</a>
+        <a href="{% url 'todo_list_delete' todo_list.id %}" class="btn btn-danger">Delete</a>
+        <a href="{% url 'todo_list_edit' todo_list.id %}" class="btn btn-warning">Edit</a>
+    </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'todo_list_create' %}" class="btn btn-primary">Create New Todo List</a>
+{% endblock %}
