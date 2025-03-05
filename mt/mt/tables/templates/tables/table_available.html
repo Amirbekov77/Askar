@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Available Tables</h1>
+    <p>Available tables for the selected date and time: {{ selected_date }}</p>
+    <ul class="list-group">
+        {% for table in available_tables %}
+            <li class="list-group-item">
+                Table #{{ table.number }} - Seats: {{ table.seats }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

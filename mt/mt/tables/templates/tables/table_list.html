@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Table List</h1>
+    <ul class="list-group">
+        {% for table in tables %}
+            <li class="list-group-item">
+                Table #{{ table.number }} - Seats: {{ table.seats }} - 
+                {% if table.is_available %}
+                    Available
+                {% else %}
+                    Not Available
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

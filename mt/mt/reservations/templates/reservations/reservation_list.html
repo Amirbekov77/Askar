@@ -1,0 +1,16 @@
+<!-- templates/reservations/reservation_list.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Reservation List</h1>
+    <ul class="list-group">
+        {% for reservation in reservations %}
+            <li class="list-group-item">
+                <!-- Ссылка на страницу с деталями брони -->
+                <a href="{% url 'reservation_detail' reservation.id %}">
+                    {{ reservation.customer.name }} - Table #{{ reservation.table.number }} - Date: {{ reservation.date }} - Status: {{ reservation.status }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
