@@ -1,0 +1,7 @@
+<h1>Удалить заметку?</h1>
+<p>{{ note.title }}</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Удалить</button>
+</form>
+<a href="{% url 'note_list' %}">Отмена</a>
